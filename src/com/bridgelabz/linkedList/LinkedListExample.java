@@ -153,6 +153,38 @@ public class LinkedListExample
 	    }  
 	    System.out.println("size of list is :"+count);
 	}
+	
+	public MyNode sortedAdd(int value)
+	{
+		
+		MyNode newValue = new MyNode(value);
+		if(head == null)
+		{
+			head = newValue;
+			
+		}
+		else
+		{
+			
+			while(head != null)
+			{
+				if(head.data > newValue.data)
+				{
+					newValue.next = head;
+					head = newValue;
+					break;
+				}
+				else if(head.next == null)
+				{
+					head.next = newValue;
+					break;
+				}
+				head = head.next;
+			}
+		}
+		return head;
+	}
+	
 	public static void main(String[] args) 
 	{
 		LinkedListExample linkedListAdd = new LinkedListExample();
@@ -160,6 +192,7 @@ public class LinkedListExample
 		linkedListAdd.add(70);
 		linkedListAdd.add(30);
 		linkedListAdd.add(56);
+		
 		//deleted the first element and printed it
 //		linkedListAdd.print();
 		System.out.println();
@@ -172,6 +205,7 @@ public class LinkedListExample
 		linkedListAdd.print();
 
 		
+		linkedListAdd.add(40);
 		System.out.println();
 		int value = linkedListAdd.userValueToInsert();
 		int afterValue = linkedListAdd.afterValue();
@@ -186,6 +220,14 @@ public class LinkedListExample
 		//deleting the last element in the list
 		linkedListAdd.popLast();
 		System.out.println("Deleted last element");
+		linkedListAdd.print();
+		
+		
+		//sort the value inside the add method call
+		linkedListAdd.sortedAdd(56);
+		linkedListAdd.sortedAdd(30);
+		linkedListAdd.sortedAdd(40);
+		linkedListAdd.sortedAdd(70);
 		linkedListAdd.print();
 	}
 
