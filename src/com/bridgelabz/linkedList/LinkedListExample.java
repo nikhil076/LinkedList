@@ -112,6 +112,19 @@ public class LinkedListExample
 	         node = node.next; 
 	     }
 	}
+	// to check for a element in the list
+	public void FindElement(int check)
+	{
+		MyNode current = head;    //Initialize current 
+	    while (current != null) 
+	    { 
+	         if (current.data == check) 
+	         {
+	              System.out.println(check+" is present");
+	         }
+	         current = current.next; 
+	    }  
+	}
 	public static void main(String[] args) 
 	{
 		LinkedListExample linkedListAdd = new LinkedListExample();
@@ -121,6 +134,9 @@ public class LinkedListExample
 		linkedListAdd.add(56);
 		//deleted the first element and printed it
 		linkedListAdd.print();
+		System.out.println();
+		//to check a value is present in the list
+		linkedListAdd.FindElement(30);
 		
 		
 		System.out.println();
