@@ -92,12 +92,26 @@ public class LinkedListExample
 		System.out.println("data = "+tempNode);}
 	}
 	// to delete the first element
-		public void pop()
-		{
-		 if (head!=null)
-		 head = head.next;
-		}
+	public void pop()
+	{
+		if (head!=null)
+		head = head.next;
+	}
 		
+		//to delete the last element in the list
+	public void popLast()
+	{
+		MyNode node = head;    //Initialize current 
+	    while (node != null) 
+	    { 
+	    	if (node.next.next == null) 
+	        {
+	    		node.next = null;
+	            break;
+	         }
+	         node = node.next; 
+	     }
+	}
 	public static void main(String[] args) 
 	{
 		LinkedListExample linkedListAdd = new LinkedListExample();
@@ -105,8 +119,6 @@ public class LinkedListExample
 		linkedListAdd.add(70);
 		linkedListAdd.add(30);
 		linkedListAdd.add(56);
-		//to pop the first value
-		linkedListAdd.pop();
 		//deleted the first element and printed it
 		linkedListAdd.print();
 		
@@ -116,6 +128,15 @@ public class LinkedListExample
 		int afterValue = linkedListAdd.afterValue();
 		int beforeValue = linkedListAdd.beforeValue();
 		MyNode newData = linkedListAdd.addBetweenValues(value,afterValue,beforeValue);
+		//to pop the first value
+		linkedListAdd.pop();
+		System.out.println("Deleted first element");
+		linkedListAdd.print();
+		System.out.println();
+		
+		//deleting the last element in the list
+		linkedListAdd.popLast();
+		System.out.println("Deleted last element");
 		linkedListAdd.print();
 		
 		
