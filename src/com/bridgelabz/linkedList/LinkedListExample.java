@@ -154,8 +154,6 @@ public class LinkedListExample
 		linkedListAdd.popLast();
 		System.out.println("Deleted last element");
 		linkedListAdd.print();
-		
-		
 	}
 
 }
