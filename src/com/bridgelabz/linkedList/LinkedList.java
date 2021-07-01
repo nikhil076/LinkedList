@@ -4,13 +4,33 @@ public class LinkedList
 {
 	MyNode head;
 	
-
+	public void append(int data ) 
+	{
+		MyNode newNode = new MyNode();
+		newNode.data = data;
+		newNode.next = null;
+		
+		if(head == null)
+		{
+			this.head = newNode;
+		}
+		else
+		{
+			MyNode tempNode = head;
+			while(tempNode.next!=null)
+			{
+				tempNode= tempNode.next;
+			}
+			tempNode.next= newNode;
+		}
+	}
 	public void add(int data)
 	{
 		MyNode newNode = new MyNode();
 		newNode.data = data;
 		newNode.next = head;
 		head = newNode;
+		
 	}
 	public void print()
 	{
@@ -23,14 +43,21 @@ public class LinkedList
 		System.out.println(tempNode.data);
 	}
 
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
-		LinkedList linkedList = new LinkedList();
+		LinkedList linkedListAdd = new LinkedList();
+		System.out.println("By Appending the values in list :");
+		linkedListAdd.append(56);
+		linkedListAdd.append(30);
+		linkedListAdd.append(70);
+		linkedListAdd.print();
+		System.out.println();
+		LinkedList linkedListAppend = new LinkedList();
 		System.out.println("By adding the values in the list ");
-		linkedList.add(70);
-		linkedList.add(30);
-		linkedList.add(56);
-		linkedList.print();
+		linkedListAppend.add(70);
+		linkedListAppend.add(30);
+		linkedListAppend.add(56);
+		linkedListAppend.print();
 	}
 
 }
