@@ -138,6 +138,21 @@ public class LinkedListExample
 	         current = current.next; 
 	    }  
 	}
+	public void deleteElementAndPrintSize(int check)
+	{
+		int count=0;
+		MyNode current = head;    //Initialize current 
+	    while (current != null) 
+	    { 
+	         if (current.next.data == check) 
+	         {
+	              current.next=null;
+	         }
+	         count++;
+	         current = current.next; 
+	    }  
+	    System.out.println("size of list is :"+count);
+	}
 	public static void main(String[] args) 
 	{
 		LinkedListExample linkedListAdd = new LinkedListExample();
@@ -152,6 +167,8 @@ public class LinkedListExample
 		linkedListAdd.findElement(30);
 		//adding element after 30 key
 		linkedListAdd.addAfterElement(30, 40);
+		//to delete 40 from the linked list
+		linkedListAdd.deleteElementAndPrintSize(40);
 		linkedListAdd.print();
 
 		
