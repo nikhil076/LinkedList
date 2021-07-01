@@ -113,7 +113,7 @@ public class LinkedListExample
 	     }
 	}
 	// to check for a element in the list
-	public void FindElement(int check)
+	public void findElement(int check)
 	{
 		MyNode current = head;    //Initialize current 
 	    while (current != null) 
@@ -121,6 +121,19 @@ public class LinkedListExample
 	         if (current.data == check) 
 	         {
 	              System.out.println(check+" is present");
+	         }
+	         current = current.next; 
+	    }  
+	}
+	public void addAfterElement(int check,int value)
+	{
+		MyNode current = head;    //Initialize current 
+	    while (current != null) 
+	    { 
+	         if (current.data == check) 
+	         {
+	              current.next.data= value;
+	              break;
 	         }
 	         current = current.next; 
 	    }  
@@ -133,11 +146,14 @@ public class LinkedListExample
 		linkedListAdd.add(30);
 		linkedListAdd.add(56);
 		//deleted the first element and printed it
-		linkedListAdd.print();
+//		linkedListAdd.print();
 		System.out.println();
 		//to check a value is present in the list
-		linkedListAdd.FindElement(30);
-		
+		linkedListAdd.findElement(30);
+		//adding element after 30 key
+		linkedListAdd.addAfterElement(30, 40);
+		linkedListAdd.print();
+
 		
 		System.out.println();
 		int value = linkedListAdd.userValueToInsert();
