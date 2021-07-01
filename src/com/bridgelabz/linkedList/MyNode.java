@@ -12,6 +12,12 @@ public class MyNode
 		this.data = data;
 		this.next = null;
 	}
+	public MyNode(int data) 
+	{
+		super();
+		this.data = data;
+		this.next = null;
+	}
 	public MyNode()
 	{
 		super();
@@ -32,6 +38,10 @@ public class MyNode
 	public void setNext(MyNode next)
 	{
 		this.next = next;
+	}
+	@Override
+	public String toString() {
+		return "MyNode [data=" + data + ", next=" + next + "]";
 	}
 
 }
