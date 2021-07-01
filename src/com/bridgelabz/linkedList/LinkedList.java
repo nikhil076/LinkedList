@@ -1,6 +1,7 @@
 package com.bridgelabz.linkedList;
 
-public class LinkedList {
+public class LinkedList 
+{
 	MyNode head;
 	
 
@@ -10,7 +11,6 @@ public class LinkedList {
 		newNode.data = data;
 		newNode.next = head;
 		head = newNode;
-		
 	}
 	public void print()
 	{
@@ -23,7 +23,8 @@ public class LinkedList {
 		System.out.println(tempNode.data);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		LinkedList linkedList = new LinkedList();
 		System.out.println("By adding the values in the list ");
 		linkedList.add(70);
