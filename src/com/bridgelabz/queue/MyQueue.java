@@ -20,6 +20,11 @@ public class MyQueue {
 	{
 		mylinkedList.print();
 	}
+
+	public void deQueue() 
+	{
+		mylinkedList.pop();
+	}
 	
 	public static void main(String[] args) {
 		
@@ -28,7 +33,11 @@ public class MyQueue {
 		myQueue.enQueue(30);
 		myQueue.enQueue(70);
 		myQueue.print();
-		System.out.println();	
+		System.out.println();
+		
+		myQueue.deQueue();
+		System.out.println("After dequeuing the queue :");
+		myQueue.print();	
 	}
 
 }
